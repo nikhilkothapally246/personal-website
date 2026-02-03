@@ -554,6 +554,25 @@ section {
     box-shadow: 0 0 0 2px var(--primary-600);
 }
 
+.form-status {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.form-status.success {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #10b981;
+}
+
+.form-status.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #ef4444;
+}
+
 @media (min-width: 768px) {
     .contact-content {
         grid-template-columns: 1fr 1fr;

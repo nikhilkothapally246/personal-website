@@ -250,7 +250,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mdadrnjz" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -263,7 +263,11 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="6" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    <input type="hidden" name="_subject" value="New Contact Form Submission from Personal Website">
+                    <input type="hidden" name="_replyto" id="replyto" value="">
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                    <div id="form-status" class="form-status"></div>
+                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Send Message</button>
                 </form>
             </div>
         </div>
