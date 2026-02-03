@@ -43,18 +43,23 @@ contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
     // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-    };
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
     
-    // Log form data (in a real application, you would send this to a server)
-    console.log('Form submitted:', formData);
+    // Create mailto link with form data
+    const subject = encodeURIComponent('Contact Form Submission from Personal Website');
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    const mailtoLink = `mailto:nikhil_kothapally@yahoo.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
     
     // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
+    alert('Your email client should open. Please send the message to complete your submission.');
     
-    // Reset form
-    contactForm.reset();
+    // Reset form after a short delay
+    setTimeout(() => {
+        contactForm.reset();
+    }, 1000);
 });
